@@ -1,5 +1,6 @@
 ﻿using Day03OopSolution.Interface;
 using Day03OopSolution.Interface_Example_02;
+using Day03OopSolution.Interface_Example_03;
 
 namespace Day03OopSolution
 {
@@ -46,16 +47,27 @@ namespace Day03OopSolution
 
             #region Interface - Example 02
 
-           /// SeriesBy2 series = new SeriesBy2();
-           /// SeriesBy3 seriesBy3 = new SeriesBy3(); 
-           /// SeriesBy4 seriesBy4 = new SeriesBy4();
-           /// Console.WriteLine("series by 2\n");
-           /// PrintFirst10NumbersOfSeries (series);
-           /// Console.WriteLine("\nseries by 3\n");
-           /// PrintFirst10NumbersOfSeries(seriesBy3);
-           /// Console.WriteLine("\nseries by 4\n");
-           /// PrintFirst10NumbersOfSeries(seriesBy4);
+            /// SeriesBy2 series = new SeriesBy2();
+            /// SeriesBy3 seriesBy3 = new SeriesBy3(); 
+            /// SeriesBy4 seriesBy4 = new SeriesBy4();
+            /// Console.WriteLine("series by 2\n");
+            /// PrintFirst10NumbersOfSeries (series);
+            /// Console.WriteLine("\nseries by 3\n");
+            /// PrintFirst10NumbersOfSeries(seriesBy3);
+            /// Console.WriteLine("\nseries by 4\n");
+            /// PrintFirst10NumbersOfSeries(seriesBy4);
 
+
+            #endregion
+
+            #region Interface - Example 03
+
+           /// Aireplane aireplane = new Aireplane();  
+           /// Car car = new Car();
+           ///
+           /// IFlyable fly = new Aireplane();
+           /// fly.Forward();
+           /// aireplane.Backward();
 
             #endregion
 

@@ -98,6 +98,40 @@ namespace Assignmet
 
     #endregion
 
+    #region part2 Q3
+
+    public interface INotificationService
+    {
+        void SendNotification(string recipient, string message);
+    }
+
+    public class EmailNotificationService : INotificationService
+    {
+        public void SendNotification(string recipient, string message)
+        {
+            Console.WriteLine($"from EmailNotificationService ==> {recipient}: {message}");
+        }
+    }
+
+    public class SmsNotificationService : INotificationService
+    {
+        public void SendNotification(string recipient, string message)
+        {
+            Console.WriteLine($"from SmsNotificationService ==> {recipient}: {message}");
+        }
+    }
+
+    public class PushNotificationService : INotificationService
+    {
+        public void SendNotification(string recipient, string message)
+        {
+            Console.WriteLine($"from PushNotificationService ==> {recipient}: {message}");
+        }
+    }
+
+
+    #endregion
+
 
     internal class Program
     {
@@ -259,11 +293,11 @@ namespace Assignmet
                   Test your implementation by creating instances of both classes and displaying their shape information.
              */
 
-           /// ICircle circle = new Circle { Radius = 5 };
-           /// circle.DisplayShapeInfo();
-           ///
-           /// IRectangle rectangle = new Rectangle { Length = 10, Width = 5 };
-           /// rectangle.DisplayShapeInfo();
+            /// ICircle circle = new Circle { Radius = 5 };
+            /// circle.DisplayShapeInfo();
+            ///
+            /// IRectangle rectangle = new Rectangle { Length = 10, Width = 5 };
+            /// rectangle.DisplayShapeInfo();
 
 
             #endregion
@@ -278,6 +312,17 @@ namespace Assignmet
             ///   bool isAuthorized = authService.AuthorizeUser("admin", "admin");
             ///   Console.WriteLine($"is admin authorized? {isAuthorized}");
 
+            #endregion
+
+            #region part02 Q3
+          ///  INotificationService emailService = new EmailNotificationService();
+          ///  emailService.SendNotification("Hema@gmail.com", "message from hema");
+          ///
+          ///  INotificationService smsService = new SmsNotificationService();
+          ///  smsService.SendNotification("ibrahym", "hema notification");
+          ///
+          ///  INotificationService pushService = new PushNotificationService();
+          ///  pushService.SendNotification("hoda", "push notification");
             #endregion
         }
     }

@@ -163,6 +163,28 @@ namespace Day03OopSolution
             // only can compare with salay (that you do in implention on compare to)
             #endregion
 
+            #region Built - In Interface IComparer
+
+
+               ///   Employee[] employees = new Employee[]
+               ///   {
+               ///       new Employee (){Id=1 ,Name="ahmed" , salary =30_000},
+               ///       new Employee (){Id=2 ,Name="ali" , salary =4_000},
+               ///       new Employee (){Id=3 ,Name="hassan" , salary =50_000},
+               ///       new Employee (){Id=1 ,Name="osama" , salary =7_000}
+               ///   };
+               ///
+               ///   Array.Sort(employees , new EmployeeIdComparer());
+               ///   foreach (var employe in employees)
+               ///   {
+               ///       Console.WriteLine(employe.ToString()); 
+               ///   }
+                  
+            #endregion
+
+
         }
+
+
     }
 }

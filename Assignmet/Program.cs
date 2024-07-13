@@ -1,5 +1,54 @@
 ﻿namespace Assignmet
 {
+    public interface IShape
+    {
+        public double Area { get; set; }
+        void DisplayShapeInfo();
+    }
+
+    public interface ICircle : IShape
+    {
+        double Radius { get; set; }
+    }
+
+    public interface IRectangle : IShape
+    {
+        double Length { get; set; }
+        double Width { get; set; }
+    }
+
+    public class Circle : ICircle
+    {
+        public double Radius { get; set; }
+
+        public double Area
+        {
+          get { return Math.PI * Radius * Radius; }
+            set{ Radius = value; } }
+
+
+        public void DisplayShapeInfo()
+        {
+            Console.WriteLine($"This is a circle with a radius of {Radius} and an area of {Area}.");
+        }
+    }
+
+    public class Rectangle : IRectangle
+    {
+        public double Length { get; set; }
+        public double Width { get; set; }
+        public double Area { 
+            get { return Length * Width; }
+           set {  Length = value; } 
+                }
+
+        public void DisplayShapeInfo()
+        {
+            Console.WriteLine($"This is a rectangle with a length of {Length} and a width of {Width}, and an area of {Area}.");
+        }
+    }
+
+
     internal class Program
     {
         static void Main(string[] args)
@@ -147,6 +196,24 @@
 
             //Answer
             //c) By separating interface names with commas
+
+
+            #endregion
+
+            #region Part02 Q1
+            /*
+             * Question 01:
+                  Define an interface named IShape with a property Area and a method DisplayShapeInfo.
+                  Create two interfaces, ICircle and IRectangle, that inherit from IShape. 
+                  Implement these interfaces in classes Circle and Rectangle. 
+                  Test your implementation by creating instances of both classes and displaying their shape information.
+             */
+
+            ICircle circle = new Circle { Radius = 5 };
+            circle.DisplayShapeInfo();
+
+            IRectangle rectangle = new Rectangle { Length = 10, Width = 5 };
+            rectangle.DisplayShapeInfo();
 
 
             #endregion

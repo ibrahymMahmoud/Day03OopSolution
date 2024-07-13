@@ -32,6 +32,24 @@
             //Answer
             //a) private
             #endregion
+
+            #region Q3
+            /*
+             * Question 3:
+                   Can an interface contain fields in C#?
+                         a) Yes
+                         b) No
+                         c) Only if they are static
+                         d) Only if they are read only
+             */
+
+            //Answer
+            //b) No
+
+
+
+
+            #endregion
         }
     }
 }

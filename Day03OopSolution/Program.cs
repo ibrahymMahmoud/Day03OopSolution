@@ -1,7 +1,8 @@
-﻿using Day03OopSolution.Interface;
+﻿using Day03OopSolution.BuiltinInterfaces;
+using Day03OopSolution.Interface;
 using Day03OopSolution.Interface_Example_02;
 using Day03OopSolution.Interface_Example_03;
-using Day03OopSolution.InterfaceICloneable;
+using Day03OopSolution.BuiltinInterfaces;
 
 namespace Day03OopSolution
 {
@@ -113,28 +114,48 @@ namespace Day03OopSolution
 
             #endregion
 
-
             #region Built -in Interfaces - ICloneable
-           /// Employee employee01 = new Employee() { Id = 5, Name = "ali", Department = new Department() { id = 100, Name = "HR" } , salary = 60_000};
-           /// Employee employee02 = new Employee() { Id = 6, Name = "hassan", Department = new Department() { id = 500, Name = "Sales" }, salary = 2_000 };
-           /// Console.WriteLine($"HashCode of Employee01 = {employee01.GetHashCode()}");
-           /// Console.WriteLine($"HashCode of Employee01 = {employee01.GetHashCode()}");
-           /// employee02 = (Employee) employee01.Clone();
-           /// //Clone Method : will generate new object with new and different identity
-           /// //               this object will have the same object state [Data] of Caller object "Employee"
-           /// //Deep copy
-           ///
-           /// employee01.Department.Name = "New";
-           /// Console.WriteLine(employee02.Department.Name);
-           /// Console.WriteLine($"HashCode of Employee01 = {employee01.GetHashCode()}");
-           /// Console.WriteLine($"HashCode of Employee01 = {employee01.GetHashCode()}");
-           ///
-           /// Employee employee = new Employee(employee02);
-           /// Console.WriteLine(employee.Name);
+            /// Employee employee01 = new Employee() { Id = 5, Name = "ali", Department = new Department() { id = 100, Name = "HR" } , salary = 60_000};
+            /// Employee employee02 = new Employee() { Id = 6, Name = "hassan", Department = new Department() { id = 500, Name = "Sales" }, salary = 2_000 };
+            /// Console.WriteLine($"HashCode of Employee01 = {employee01.GetHashCode()}");
+            /// Console.WriteLine($"HashCode of Employee01 = {employee01.GetHashCode()}");
+            /// employee02 = (Employee) employee01.Clone();
+            /// //Clone Method : will generate new object with new and different identity
+            /// //               this object will have the same object state [Data] of Caller object "Employee"
+            /// //Deep copy
+            ///
+            /// employee01.Department.Name = "New";
+            /// Console.WriteLine(employee02.Department.Name);
+            /// Console.WriteLine($"HashCode of Employee01 = {employee01.GetHashCode()}");
+            /// Console.WriteLine($"HashCode of Employee01 = {employee01.GetHashCode()}");
+            ///
+            /// Employee employee = new Employee(employee02);
+            /// Console.WriteLine(employee.Name);
 
 
 
             #endregion
+
+            #region Built-In Interface ICompareable
+
+         ///   Employee[] employees = new Employee[]
+         ///   {
+         ///       new Employee (){Id=1 ,Name="ahmed" , salary =30_000},
+         ///       new Employee (){Id=2 ,Name="ali" , salary =4_000},
+         ///       new Employee (){Id=3 ,Name="hassan" , salary =50_000},
+         ///       new Employee (){Id=1 ,Name="osama" , salary =7_000}
+         ///   };
+         ///
+         ///   Array.Sort(employees);
+         ///   foreach (var employe in employees)
+         ///   {
+         ///       Console.WriteLine(employe.ToString()); 
+         ///   }
+
+
+
+            #endregion
+
 
 
         }

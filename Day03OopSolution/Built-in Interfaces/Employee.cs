@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Day03OopSolution.InterfaceICloneable
+namespace Day03OopSolution.BuiltinInterfaces
 {
-    class Employee : ICloneable
+    class Employee : ICloneable , IComparable
     {
         public int Id;
         public string? Name;
@@ -34,6 +34,16 @@ namespace Day03OopSolution.InterfaceICloneable
                 salary= this.salary,
                 Department = (Department) this.Department.Clone()
             };
+        }
+
+        public int CompareTo(object? obj)
+        {
+            Employee employee = (Employee?) obj ;
+            if( this.salary > employee?.salary )
+                return 1 ;
+            else if(this.salary < employee?.salary)
+                return -1 ;
+            return 0;
         }
     }
 }

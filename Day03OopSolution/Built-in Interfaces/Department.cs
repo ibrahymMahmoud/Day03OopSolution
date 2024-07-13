@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Day03OopSolution.InterfaceICloneable
+namespace Day03OopSolution.BuiltinInterfaces
 {
     internal class Department : ICloneable
     {

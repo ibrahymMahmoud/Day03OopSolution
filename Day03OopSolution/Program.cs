@@ -1,6 +1,7 @@
 ﻿using Day03OopSolution.Interface;
 using Day03OopSolution.Interface_Example_02;
 using Day03OopSolution.Interface_Example_03;
+using Day03OopSolution.InterfaceICloneable;
 
 namespace Day03OopSolution
 {
@@ -99,19 +100,41 @@ namespace Day03OopSolution
 
             #region P05 Why Clone Method Says it Makes a Shallow Copy
 
-         ///   string[] Names01 = { "amr", "mona" };
-         ///   string[] Names02 = { "ahmed", "yomna" };
-         ///   Console.WriteLine($"HashCode of Names01 = {Names01.GetHashCode()}");
-         ///   Console.WriteLine($"HashCode of Names01 = {Names01.GetHashCode()}");
-         ///   Names02 = (string[]) Names01.Clone();
-         ///   Console.WriteLine("after clone");
-         ///   Console.WriteLine($"HashCode of Names01 = {Names01.GetHashCode()}");
-         ///   Console.WriteLine($"HashCode of Names01 = {Names01.GetHashCode()}");
-         ///   Names01[0] = "ali";
-         ///   Console.WriteLine(Names02[0]);
+            ///   string[] Names01 = { "amr", "mona" };
+            ///   string[] Names02 = { "ahmed", "yomna" };
+            ///   Console.WriteLine($"HashCode of Names01 = {Names01.GetHashCode()}");
+            ///   Console.WriteLine($"HashCode of Names01 = {Names01.GetHashCode()}");
+            ///   Names02 = (string[]) Names01.Clone();
+            ///   Console.WriteLine("after clone");
+            ///   Console.WriteLine($"HashCode of Names01 = {Names01.GetHashCode()}");
+            ///   Console.WriteLine($"HashCode of Names01 = {Names01.GetHashCode()}");
+            ///   Names01[0] = "ali";
+            ///   Console.WriteLine(Names02[0]);
 
             #endregion
 
+
+            #region Built -in Interfaces - ICloneable
+           /// Employee employee01 = new Employee() { Id = 5, Name = "ali", Department = new Department() { id = 100, Name = "HR" } , salary = 60_000};
+           /// Employee employee02 = new Employee() { Id = 6, Name = "hassan", Department = new Department() { id = 500, Name = "Sales" }, salary = 2_000 };
+           /// Console.WriteLine($"HashCode of Employee01 = {employee01.GetHashCode()}");
+           /// Console.WriteLine($"HashCode of Employee01 = {employee01.GetHashCode()}");
+           /// employee02 = (Employee) employee01.Clone();
+           /// //Clone Method : will generate new object with new and different identity
+           /// //               this object will have the same object state [Data] of Caller object "Employee"
+           /// //Deep copy
+           ///
+           /// employee01.Department.Name = "New";
+           /// Console.WriteLine(employee02.Department.Name);
+           /// Console.WriteLine($"HashCode of Employee01 = {employee01.GetHashCode()}");
+           /// Console.WriteLine($"HashCode of Employee01 = {employee01.GetHashCode()}");
+           ///
+           /// Employee employee = new Employee(employee02);
+           /// Console.WriteLine(employee.Name);
+
+
+
+            #endregion
 
 
         }

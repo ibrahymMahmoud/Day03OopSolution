@@ -1,5 +1,9 @@
-﻿namespace Assignmet
+﻿using System.Collections;
+
+namespace Assignmet
 {
+    #region Part2 Q1
+    //Part1 Q1 
     public interface IShape
     {
         public double Area { get; set; }
@@ -23,8 +27,9 @@
 
         public double Area
         {
-          get { return Math.PI * Radius * Radius; }
-            set{ Radius = value; } }
+            get { return Math.PI * Radius * Radius; }
+            set { Radius = value; }
+        }
 
 
         public void DisplayShapeInfo()
@@ -37,16 +42,61 @@
     {
         public double Length { get; set; }
         public double Width { get; set; }
-        public double Area { 
+        public double Area
+        {
             get { return Length * Width; }
-           set {  Length = value; } 
-                }
+            set { Length = value; }
+        }
 
         public void DisplayShapeInfo()
         {
             Console.WriteLine($"This is a rectangle with a length of {Length} and a width of {Width}, and an area of {Area}.");
         }
     }
+    //// end Part Q1  
+    #endregion
+
+    #region Part2 Q2
+
+    public interface IAuthenticationService
+    {
+        bool AuthenticateUser(string username, string password);
+        bool AuthorizeUser(string username, string role);
+    }
+
+    public class BasicAuthenticationService : IAuthenticationService
+    {
+        private string[] storedUsernames = { "admin", "user" };
+        private string[] storedPasswords = { "password123", "abc123" };
+        private string[][] storedRoles = { new[] { "admin", "user" }, new[] { "user" } };
+
+        public bool AuthenticateUser(string username, string password)
+        {
+            int index = Array.IndexOf(storedUsernames, username);
+            if (index >= 0 && storedPasswords[index] == password)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool AuthorizeUser(string username, string role)
+        {
+            int index = Array.IndexOf(storedUsernames, username);
+            if (index >= 0)
+            {
+                string[] roles = storedRoles[index];
+                if (Array.IndexOf(roles, role) >= 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+
+    #endregion
 
 
     internal class Program
@@ -209,12 +259,24 @@
                   Test your implementation by creating instances of both classes and displaying their shape information.
              */
 
-            ICircle circle = new Circle { Radius = 5 };
-            circle.DisplayShapeInfo();
+           /// ICircle circle = new Circle { Radius = 5 };
+           /// circle.DisplayShapeInfo();
+           ///
+           /// IRectangle rectangle = new Rectangle { Length = 10, Width = 5 };
+           /// rectangle.DisplayShapeInfo();
 
-            IRectangle rectangle = new Rectangle { Length = 10, Width = 5 };
-            rectangle.DisplayShapeInfo();
 
+            #endregion
+
+            #region Part02 Q2
+
+            ///   IAuthenticationService authService = new BasicAuthenticationService();
+            /// 
+            ///   bool isAuthenticated = authService.AuthenticateUser("admin", "password123");
+            ///   Console.WriteLine($"is admin authenticated? {isAuthenticated}");
+            /// 
+            ///   bool isAuthorized = authService.AuthorizeUser("admin", "admin");
+            ///   Console.WriteLine($"is admin authorized? {isAuthorized}");
 
             #endregion
         }

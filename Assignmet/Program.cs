@@ -18,6 +18,20 @@
             //Answer
             //a) To provide a way to implement multiple inheritance
             #endregion
+
+            #region Q2
+            /*
+             * Question 2:
+                   Which of the following is NOT a valid access modifier for interface members in C#?
+                        a) private
+                        b) protected
+                        c) internal
+                        d) public
+             */
+
+            //Answer
+            //a) private
+            #endregion
         }
     }
 }

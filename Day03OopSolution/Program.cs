@@ -62,14 +62,42 @@ namespace Day03OopSolution
 
             #region Interface - Example 03
 
-           /// Aireplane aireplane = new Aireplane();  
-           /// Car car = new Car();
-           ///
-           /// IFlyable fly = new Aireplane();
-           /// fly.Forward();
-           /// aireplane.Backward();
+            /// Aireplane aireplane = new Aireplane();  
+            /// Car car = new Car();
+            ///
+            /// IFlyable fly = new Aireplane();
+            /// fly.Forward();
+            /// aireplane.Backward();
 
             #endregion
+
+            #region Deep Copy Vs Shallow Copy
+
+         ///   int[] Arr01 = { 1, 2, 3 };
+         ///   int[] Arr02 = { 4 , 5, 6 };
+         ///   Console.WriteLine($"Hashcode of Array01 {Arr01.GetHashCode()}");
+         ///   Console.WriteLine($"Hashcode of Array02 {Arr02.GetHashCode()}");
+         ///   Arr01 = Arr02;
+         ///   //This Object {1 ,2 ,3} Has 2 References [Arr01 , Arr02](اسمين دلع)
+         ///   //This Object {4 ,5 ,6} Became UnReachable Object
+         ///   //Shall Copy
+         ///   Console.WriteLine("After Shallow Copy -->  Arr01 = Arr02; ");
+         ///   Console.WriteLine($"Hashcode of Array01 {Arr01.GetHashCode()}");
+         ///   Console.WriteLine($"Hashcode of Array02 {Arr02.GetHashCode()}");
+         ///   Arr01[1] = 500;
+         ///   Console.WriteLine(Arr02[1]);
+         ///   Arr01 = (int[])Arr01.Clone();
+         ///   //Clone Method :will generate new object with new and different indentity
+         ///   //              this object will have the same object the same object state [data] of caller object 'Arr01'
+         ///   //Deep Copy
+         ///   Console.WriteLine("After deep copy --> Arr01 = (int[])Arr01.Clone(); ");
+         ///   Console.WriteLine($"Hashcode of Array01 {Arr01.GetHashCode()}");
+         ///   Console.WriteLine($"Hashcode of Array02 {Arr02.GetHashCode()}");
+         ///   Arr01[1] = 200;
+         ///   Console.WriteLine(Arr02[1]);
+            #endregion
+
+
 
         }
     }
